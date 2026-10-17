@@ -1,121 +1,182 @@
+
 import { useState } from 'react'
-import heroImg from './assets/hero.png'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
+import PenguinMap from './PenguinMap'
 import './App.css'
 
+const penguinFacts = [
+  "Scientists tracked eight juvenile emperor penguins during their first journeys at sea!",
+  "The penguins were around six months old when researchers began tracking them.",
+  "Emperor penguins depend on Antarctic sea ice for breeding and raising their chicks.",
+  "The tracking study followed penguins from 2019 into 2020.",
+  "A penguin's location doesn't tell us whether it was swimming or resting on sea ice!",
+  "Studying young penguins helps scientists understand where they travel and which ocean habitats they use."
+]
+
 function App() {
-  const [count, setCount] = useState(0)
+  const [page, setPage] = useState('home')
+  const [factIndex, setFactIndex] = useState(0)
+
+  function showPage(nextPage) {
+    setPage(nextPage)
+    window.scrollTo(0, 0)
+  }
+
+  function nextFact() {
+    setFactIndex((current) => (current + 1) % penguinFacts.length)
+  }
 
   return (
-    <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
-        </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
-          </p>
-        </div>
+    <div className="site-shell">
+
+      {/* Navigation */}
+      <header className="site-header">
         <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
+          className="site-logo"
+          onClick={() => showPage('home')}
         >
-          Count is {count}
+          🐧 waddle we go?
         </button>
-      </section>
 
-      <div className="ticks"></div>
+        <nav className="site-nav" aria-label="Main navigation">
+          <button onClick={() => showPage('home')}>
+            Home
+          </button>
 
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
+          <button onClick={() => showPage('about')}>
+            About Us
+          </button>
+
+          <a
+            className="nav-explore research-link"
+            href="https://royalsocietypublishing.org/rsos/article/9/8/211708/96648/Juvenile-emperor-penguin-range-calls-for-extended"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Read the Research ↗
+          </a>
+
+        </nav>
+      </header>
+
+      {/* Homepage */}
+      {page === 'home' && (
+        <main className="new-homepage">
+          <section className="hero-card">
+
+            <div className="hero-text">
+              <p className="hero-eyebrow">
+                ✦ BIG SCIENCE, LITTLE PENGUINS ✦
+              </p>
+
+              <h1>
+                little penguins.
+                <br />
+                <span>big journeys.</span>
+              </h1>
+
+              <p className="hero-description">
+                Meet eight young emperor penguins
+                exploring the Southern Ocean.
+                Discover their real journeys,
+                understand the science, and learn
+                why protecting Antarctic wildlife matters.
+              </p>
+
+              <button
+                className="hero-cta"
+                onClick={() => showPage('map')}
+              >
+                explore their journeys →
+              </button>
+
+              <p className="hero-footnote">
+                ♡ Based on real research from 2019–2020
+              </p>
+            </div>
+
+            <div className="hero-visual">
+              <div className="hero-picture">
+                <span className="hero-sparkle">✧ ✦ ✧</span>
+
+                <img
+                  src="/penguin.webp"
+                  alt="Emperor penguin illustration"
+                  className="hero-penguin"
+                />
+
+                <p>your adventure starts here! ♡</p>
+              </div>
+            </div>
+
+          </section>
+
+          <section className="home-bottom">
+            <p>✧ explore • discover • protect ✧</p>
+          </section>
+        </main>
+      )}
+
+      {/* About page */}
+      {page === 'about' && (
+        <main className="about-page">
+          <p className="hero-eyebrow">
+            ✦ THE STORY BEHIND THE WADDLE ✦
+          </p>
+
+          <h1>about us 🐧</h1>
+
+          <p>
+            Waddle We Go? is a student-built project
+            that makes penguin research more accessible,
+            engaging, and personal.
+          </p>
+
+          <p>
+            Using real satellite-tracking data from
+            juvenile emperor penguins, we turn scientific
+            research into interactive maps and stories
+            that help people connect with Antarctic
+            wildlife and understand why conservation matters.
+          </p>
+
+          <button
+            className="hero-cta"
+            onClick={() => showPage('map')}
+          >
+            explore the research →
+          </button>
+        </main>
+      )}
+
+      {/* Your existing map */}
+      {page === 'map' && (
+        <div className="map-section">
+          <PenguinMap />
         </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
+      )}
 
-      <div className="ticks"></div>
-      <section id="spacer"></section>
-    </>
+      {/* Clickable penguin fact buddy */}
+      
+    {page !== 'map' && (
+      <div className="fact-buddy">
+        <div className="fact-bubble" aria-live="polite">
+          <p>{penguinFacts[factIndex]}</p>
+          <span>click me for another fact! ↓</span>
+        </div>
+
+        <button
+          className="fact-penguin"
+          onClick={nextFact}
+          aria-label="Show another penguin research fact"
+          title="Click for a penguin fact!"
+        >
+          🐧
+        </button>
+      </div>
+    )}
+
+
+    </div>
   )
 }
 

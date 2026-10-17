@@ -1,184 +1,1031 @@
-.counter {
-  font-size: 16px;
-  padding: 5px 10px;
-  border-radius: 5px;
-  color: var(--accent);
-  background: var(--accent-bg);
-  border: 2px solid transparent;
-  transition: border-color 0.3s;
-  margin-bottom: 24px;
 
-  &:hover {
-    border-color: var(--accent-border);
-  }
-  &:focus-visible {
-    outline: 2px solid var(--accent);
-    outline-offset: 2px;
-  }
+.homepage {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+  box-sizing: border-box;
 }
 
-.hero {
-  position: relative;
 
-  .base,
-  .framework,
-  .vite {
-    inset-inline: 0;
-    margin: 0 auto;
-  }
+.welcome-card {
+  background: #fffdf8;
+  border: 3px solid #b8e3ed;
+  border-radius: 32px;
 
-  .base {
-    width: 170px;
-    position: relative;
-    z-index: 0;
-  }
+  width: 90%;
+  max-width: 1100px;
+  min-height: 600px;
 
-  .framework,
-  .vite {
-    position: absolute;
-  }
+  padding: 70px 60px;
+  box-sizing: border-box;
 
-  .framework {
-    z-index: 1;
-    top: 34px;
-    height: 28px;
-    transform: perspective(2000px) rotateZ(300deg) rotateX(44deg) rotateY(39deg)
-      scale(1.4);
-  }
+  text-align: center;
+  box-shadow: 10px 10px 0 #b8e3ed;
 
-  .vite {
-    z-index: 0;
-    top: 107px;
-    height: 26px;
-    width: auto;
-    transform: perspective(2000px) rotateZ(300deg) rotateX(40deg) rotateY(39deg)
-      scale(0.8);
-  }
-}
-
-#center {
   display: flex;
   flex-direction: column;
-  gap: 25px;
-  place-content: center;
-  place-items: center;
-  flex-grow: 1;
-
-  @media (max-width: 1024px) {
-    padding: 32px 20px 24px;
-    gap: 18px;
-  }
+  justify-content: center;
+  align-items: center;
 }
 
-#next-steps {
-  display: flex;
-  border-top: 1px solid var(--border);
-  text-align: left;
 
-  & > div {
-    flex: 1 1 0;
-    padding: 32px;
-    @media (max-width: 1024px) {
-      padding: 24px 20px;
-    }
-  }
-
-  .icon {
-    margin-bottom: 16px;
-    width: 22px;
-    height: 22px;
-  }
-
-  @media (max-width: 1024px) {
-    flex-direction: column;
-    text-align: center;
-  }
+.eyebrow {
+  color: #78a9b8;
+  font-size: 14px;
 }
 
-#docs {
-  border-right: 1px solid var(--border);
-
-  @media (max-width: 1024px) {
-    border-right: none;
-    border-bottom: 1px solid var(--border);
-  }
+h1 {
+  color: #28576d;
+  font-size: 55px;
+  margin: 12px 0;
 }
 
-#next-steps ul {
-  list-style: none;
-  padding: 0;
-  display: flex;
-  gap: 8px;
-  margin: 32px 0 0;
+h2 {
+  color: #6092a5;
+  font-size: 22px;
+}
 
-  .logo {
-    height: 18px;
+.welcome-card p {
+  line-height: 1.7;
+  color: #527c8e;
+}
+
+button {
+  background: #a9dce8;
+  color: #204f66;
+  border: none;
+  border-radius: 30px;
+  padding: 14px 28px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 16px;
+}
+
+button:hover {
+  background: #83bfd2;
+}
+
+
+.welcome-card h1 {
+  font-size: clamp(48px, 7vw, 100px);
+  margin: 20px 0;
+}
+
+.welcome-card h2 {
+  font-size: clamp(20px, 3vw, 32px);
+}
+
+.welcome-card p {
+  font-size: 30px;
+  max-width: 1000px;
+  line-height: 1.8;
+}
+
+.welcome-card button {
+  font-size: 40px;
+  padding: 18px 42px;
+}
+
+
+@media (max-width: 600px) {
+  .welcome-card {
+    width: 100%;
+    min-height: 500px;
+    padding: 40px 20px;
   }
 
-  a {
-    color: var(--text-h);
+  .welcome-card p {
     font-size: 16px;
-    border-radius: 6px;
-    background: var(--social-bg);
-    display: flex;
-    padding: 6px 12px;
-    align-items: center;
-    gap: 8px;
-    text-decoration: none;
-    transition: box-shadow 0.3s;
+  }
+}
 
-    &:hover {
-      box-shadow: var(--shadow);
-    }
-    .button-icon {
-      height: 18px;
-      width: 18px;
-    }
+/* 🐧 PENGUIN MAP PAGE */
+
+
+.map-page {
+  width: 96%;
+  max-width: 1600px;
+  margin: 20px auto;
+  padding: 24px;
+
+  box-sizing: border-box;
+  background: #fffdf8;
+  border: 3px solid #b8e3ed;
+  border-radius: 32px;
+  box-shadow: 10px 10px 0 #b8e3ed;
+
+  text-align: center;
+}
+
+.map-header h1 {
+  font-size: clamp(36px, 5vw, 50px);
+  color: #28576d;
+  margin: 12px 0;
+}
+
+.map-eyebrow {
+  color: #7aaabd;
+  font-size: 15px;
+  letter-spacing: 3px;
+  font-weight: bold;
+}
+
+.map-subtitle {
+  color: #6092a5;
+  font-size: 15px;
+  line-height: 1.7;
+  max-width: 800px;
+  margin: 0 auto 24px;
+}
+
+/* Little scrapbook stickers */
+
+.map-stickers {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 28px;
+}
+
+.map-stickers span {
+  background: #e0f3f8;
+  color: #457c94;
+  padding: 10px 18px;
+  border-radius: 30px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.map-stickers span:nth-child(2) {
+  background: #fce4ed;
+  color: #a66b85;
+}
+
+.map-stickers span:nth-child(3) {
+  background: #ece8ff;
+  color: #8276b5;
+}
+
+/* Postcard-style map frame */
+
+.map-frame {
+  background: #eaf7fc;
+  padding: 14px;
+  border: 3px solid #a8d9e8;
+  border-radius: 24px;
+  box-shadow: 5px 5px 0 #c8eaf2;
+  overflow: hidden;
+}
+
+.map-frame-top {
+  display: flex;
+  justify-content: space-between;
+  padding: 4px 8px 14px;
+
+  color: #54899f;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.map-frame .leaflet-container {
+  height: 65vh;
+  min-height: 450px;
+  width: 100%;
+  border-radius: 14px;
+  z-index: 0;
+}
+
+.map-footer {
+  margin-top: 25px;
+  color: #87aebe;
+  font-size: 14px;
+  font-style: italic;
+}
+
+/* Phone-friendly layout */
+
+@media (max-width: 600px) {
+  .map-page {
+    width: 96%;
+    padding: 20px 12px;
+    margin: 20px auto;
   }
 
-  @media (max-width: 1024px) {
-    margin-top: 20px;
+  .map-frame {
+    padding: 8px;
+  }
+
+  .map-frame .leaflet-container {
+    height: 400px;
+  }
+
+  .map-stickers span {
+    font-size: 12px;
+    padding: 8px 12px;
+  }
+}
+
+/* 🐚 Back to shore button */
+
+button.back-button {
+  display: inline-block;
+  width: auto;
+
+  margin: 24px 0 0 5%;
+  padding: 14px 28px;
+
+  background: #fff0f6;
+  color: #9b5478;
+
+  border: 3px solid #e7a8c7;
+  border-radius: 50px;
+
+  font-size: 18px;
+  font-weight: bold;
+
+  box-shadow: 5px 5px 0 #e7a8c7;
+  cursor: pointer;
+
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+button.back-button:hover {
+  background: #fbd9e8;
+  transform: translateY(-3px);
+  box-shadow: 5px 8px 0 #e7a8c7;
+}
+
+
+/* ===== NEW WEBSITE LAYOUT ===== */
+
+.site-shell {
+  min-height: 100vh;
+}
+
+/* Navigation */
+
+.site-header {
+  width: min(1400px, 94%);
+  margin: 18px auto 0;
+  padding: 14px 24px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+
+  box-sizing: border-box;
+  background: #fffdf8;
+  border: 2px solid #b8e3ed;
+  border-radius: 24px;
+  box-shadow: 5px 5px 0 #b8e3ed;
+}
+
+.site-logo {
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: transparent;
+
+  color: #28576d;
+  font-size: 22px;
+  font-weight: 800;
+}
+
+.site-logo:hover {
+  background: transparent;
+}
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.site-nav button {
+  margin: 0;
+  padding: 10px 16px;
+  background: transparent;
+  color: #527c8e;
+  font-size: 15px;
+}
+
+.site-nav button:hover {
+  background: #eaf7fc;
+}
+
+.site-nav .nav-explore {
+  background: #a9dce8;
+  color: #28576d;
+}
+
+/* Homepage hero */
+
+.new-homepage {
+  width: min(1400px, 94%);
+  margin: 26px auto;
+}
+
+.hero-card {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  align-items: center;
+  gap: 32px;
+
+  min-height: 580px;
+  padding: 65px;
+
+  background: #fffdf8;
+  border: 3px solid #b8e3ed;
+  border-radius: 36px;
+  box-shadow: 10px 10px 0 #b8e3ed;
+  box-sizing: border-box;
+}
+
+.hero-text {
+  text-align: left;
+}
+
+.hero-eyebrow {
+  color: #7aaabd;
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.hero-text h1 {
+  font-size: clamp(48px, 6vw, 88px);
+  line-height: 1.1;
+  color: #28576d;
+  margin: 20px 0;
+}
+
+.hero-text h1 span {
+  color: #83b9ce;
+}
+
+.hero-description {
+  max-width: 560px;
+  font-size: 19px;
+  line-height: 1.8;
+  color: #527c8e;
+}
+
+.hero-cta {
+  margin-top: 20px;
+  padding: 18px 32px;
+  border-radius: 40px;
+  background: #a9dce8;
+  color: #28576d;
+  font-size: 18px;
+  box-shadow: 5px 5px 0 #79b5ca;
+}
+
+.hero-cta:hover {
+  background: #8ccfdf;
+}
+
+.hero-footnote {
+  margin-top: 24px;
+  font-size: 13px;
+  color: #87aebe;
+}
+
+/* Penguin picture */
+
+.hero-visual {
+  display: flex;
+  justify-content: center;
+}
+
+.hero-picture {
+  width: 100%;
+  max-width: 400px;
+  min-height: 390px;
+  padding: 25px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  background: #e6f5fa;
+  border: 3px dashed #a8d9e8;
+  border-radius: 32px;
+  transform: rotate(2deg);
+  box-sizing: border-box;
+}
+
+.hero-penguin {
+  width: 100%;
+  max-width: 280px;
+  height: 300px;
+  object-fit: contain;
+}
+
+.hero-sparkle {
+  color: #7eb3ca;
+  font-size: 26px;
+}
+
+.hero-picture p {
+  color: #6092a5;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.home-bottom {
+  text-align: center;
+  padding: 16px;
+  color: #fffdf8;
+  font-weight: bold;
+}
+
+/* About page */
+
+.about-page {
+  width: min(900px, 92%);
+  margin: 35px auto;
+  padding: 60px;
+
+  background: #fffdf8;
+  border: 3px solid #b8e3ed;
+  border-radius: 32px;
+  box-shadow: 8px 8px 0 #b8e3ed;
+  box-sizing: border-box;
+}
+
+.about-page h1 {
+  font-size: 56px;
+}
+
+.about-page > p:not(.hero-eyebrow) {
+  color: #527c8e;
+  font-size: 19px;
+  line-height: 1.9;
+}
+
+/* Clickable fact penguin */
+
+.fact-buddy {
+  position: fixed;
+  bottom: 22px;
+  right: 24px;
+  z-index: 1000;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+.fact-bubble {
+  width: 260px;
+  padding: 16px 18px;
+
+  background: #fffdf8;
+  border: 3px solid #b8e3ed;
+  border-radius: 22px;
+  box-shadow: 4px 4px 0 #b8e3ed;
+}
+
+.fact-bubble p {
+  margin: 0 0 8px;
+  color: #28576d;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.fact-bubble span {
+  color: #87aebe;
+  font-size: 11px;
+}
+
+.fact-penguin {
+  margin: 0;
+  padding: 4px 10px;
+
+  background: transparent;
+  border: none;
+  font-size: 65px;
+  line-height: 1;
+
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.fact-penguin:hover {
+  background: transparent;
+  transform: rotate(-10deg) scale(1.1);
+}
+
+.fact-penguin:focus-visible {
+  outline: 3px solid #28576d;
+  outline-offset: 4px;
+}
+
+/* Mobile */
+
+@media (max-width: 750px) {
+  .site-header {
     flex-wrap: wrap;
     justify-content: center;
+    padding: 14px;
+  }
 
-    li {
-      flex: 1 1 calc(50% - 8px);
-    }
+  .site-nav {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 
-    a {
-      width: 100%;
-      justify-content: center;
-      box-sizing: border-box;
-    }
+  .hero-card {
+    grid-template-columns: 1fr;
+    padding: 35px 24px;
+  }
+
+  .hero-text {
+    text-align: center;
+  }
+
+  .hero-description {
+    font-size: 16px;
+  }
+
+  .hero-picture {
+    min-height: 280px;
+  }
+
+  .hero-penguin {
+    height: 220px;
+  }
+
+  .about-page {
+    padding: 35px 24px;
+  }
+
+  .fact-bubble {
+    width: 200px;
+  }
+
+  .fact-penguin {
+    font-size: 48px;
   }
 }
 
-#spacer {
-  height: 88px;
-  border-top: 1px solid var(--border);
-  @media (max-width: 1024px) {
-    height: 48px;
-  }
+
+/* Research paper link in the navigation */
+
+.site-nav .research-link {
+  display: inline-block;
+  padding: 10px 16px;
+  background: #a9dce8;
+  color: #28576d;
+  border-radius: 30px;
+
+  font-size: 15px;
+  font-weight: bold;
+  text-decoration: none;
+
+  transition: background 0.2s, transform 0.2s;
 }
 
-.ticks {
-  position: relative;
+.site-nav .research-link:hover {
+  background: #83bfd2;
+  transform: translateY(-2px);
+}
+
+.site-nav .research-link:focus-visible {
+  outline: 3px solid #28576d;
+  outline-offset: 3px;
+}
+
+
+/* Wider map explorer page */
+.map-page {
+  width: 96%;
+  max-width: 1600px;
+  margin: 24px auto;
+  padding: 30px;
+}
+
+/* Map + field notes */
+.map-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 2.3fr) minmax(260px, 1fr);
+  gap: 24px;
+  align-items: start;
+}
+
+/* Map fills its column */
+.map-layout .map-frame {
+  min-width: 0;
+}
+
+.map-layout .leaflet-container {
+  height: 65vh;
+  min-height: 480px;
   width: 100%;
+}
 
-  &::before,
-  &::after {
-    content: '';
-    position: absolute;
-    top: -4.5px;
-    border: 5px solid transparent;
+/* Right-hand journal */
+.field-notes {
+  background: #f7f0ff;
+  border: 3px solid #ded0ee;
+  border-radius: 24px;
+  padding: 28px;
+  text-align: left;
+  box-shadow: 5px 5px 0 #e7ddf5;
+}
+
+.field-notes h2 {
+  color: #65548b;
+  font-size: 24px;
+}
+
+.field-notes p {
+  color: #73668d;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+@media (max-width: 850px) {
+  .map-layout {
+    grid-template-columns: 1fr;
   }
 
-  &::before {
-    left: 0;
-    border-left-color: var(--border);
+  .map-page {
+    padding: 18px 12px;
   }
-  &::after {
-    right: 0;
-    border-right-color: var(--border);
+
+  .map-layout .leaflet-container {
+    height: 450px;
+    min-height: 0;
   }
 }
+
+
+/* Make all navigation links consistent */
+
+.site-nav button,
+.site-nav a {
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+/* Standard navigation buttons */
+.site-nav button:not(.nav-explore) {
+  background: transparent;
+  border: 2px solid transparent;
+  box-shadow: none;
+  color: #527c8e;
+  padding: 10px 16px;
+  margin: 0;
+  border-radius: 30px;
+}
+
+/* Hover effect */
+.site-nav button:not(.nav-explore):hover {
+  background: #e0f3f8;
+  color: #28576d;
+}
+
+/* Research paper button */
+.site-nav .research-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #a9dce8;
+  color: #28576d;
+  border: 2px solid transparent;
+  border-radius: 30px;
+
+  padding: 10px 18px;
+  margin: 0;
+
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.site-nav .research-link:hover {
+  background: #83bfd2;
+}
+
+
+/* ===== COMPACT MAP PAGE ===== */
+
+.map-page {
+  width: min(1180px, 94%);
+  max-width: 1180px;
+  margin: 22px auto;
+  padding: 28px 30px 34px;
+}
+
+.map-header h1 {
+  font-size: clamp(32px, 4vw, 48px);
+  margin: 6px 0 8px;
+}
+
+.map-eyebrow {
+  font-size: 12px;
+  letter-spacing: 2px;
+  margin: 0 0 8px;
+}
+
+.map-subtitle {
+  font-size: 15px;
+  margin: 0 auto 16px;
+  line-height: 1.5;
+}
+
+.map-stickers {
+  margin-bottom: 18px;
+  gap: 8px;
+}
+
+.map-stickers span {
+  font-size: 12px;
+  padding: 7px 13px;
+}
+
+/* ===== FILTER CARDS ===== */
+
+.map-filters {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin: 0 0 20px;
+}
+
+.map-filters .filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  text-align: left;
+  background: #f0f9fc;
+  border: 2px solid #c4e6ef;
+  border-radius: 16px;
+  padding: 12px 16px;
+  min-width: 200px;
+}
+
+.filter-group span {
+  color: #527c8e;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.filter-group select {
+  width: 100%;
+  background: #fffdf8;
+  color: #28576d;
+  border: 1px solid #b8e3ed;
+  border-radius: 9px;
+  padding: 9px 12px;
+  font-family: inherit;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+/* ===== MAP AND SIDEBAR ===== */
+
+.map-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.9fr) minmax(260px, 1fr);
+  gap: 18px;
+  align-items: start;
+}
+
+.map-layout .map-frame {
+  min-width: 0;
+  padding: 10px;
+}
+
+.map-frame-top {
+  padding: 4px 8px 10px;
+}
+
+.map-layout .leaflet-container {
+  height: 430px;
+  min-height: 0;
+  width: 100%;
+}
+
+.map-count {
+  color: #78a9b8;
+  font-size: 12px;
+  margin: 10px 0 2px;
+}
+
+/* Stack the two cards vertically */
+
+.map-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  min-width: 0;
+}
+
+/* Existing purple field notes */
+
+.field-notes {
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.field-notes h2 {
+  font-size: 21px;
+  margin: 10px 0 14px;
+}
+
+.field-notes p {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.field-notes a {
+  color: #65548b;
+  font-weight: bold;
+  font-size: 13px;
+}
+
+/* ===== BLUE FIELD JOURNAL ===== */
+
+.season-card {
+  background: #eaf7fc;
+  border: 3px solid #b8e3ed;
+  border-radius: 22px;
+  padding: 22px;
+  text-align: left;
+  box-shadow: 5px 5px 0 #d4edf5;
+}
+
+.season-eyebrow {
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+  color: #78a9b8;
+  margin: 0 0 16px;
+}
+
+.season-card h2 {
+  color: #28576d;
+  font-size: 22px;
+  margin: 18px 0 10px;
+}
+
+.season-card p {
+  color: #527c8e;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.journal-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+
+.journal-tabs button {
+  flex: 1;
+  margin: 0;
+  padding: 10px 12px;
+  background: #fffdf8;
+  border: 2px solid transparent;
+  border-radius: 12px;
+  color: #527c8e;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.journal-tabs button.selected {
+  background: #b8e3ed;
+  border-color: #78b9d0;
+  color: #28576d;
+}
+
+.season-card .journal-month {
+  font-size: 13px;
+  font-weight: bold;
+  color: #78a9b8;
+}
+
+.season-card .journal-disclaimer {
+  font-size: 12px;
+  font-style: italic;
+  color: #7d9daa;
+  margin-top: 16px;
+}
+
+.season-card a {
+  display: inline-block;
+  margin-top: 8px;
+  color: #457c94;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+/* ===== RESPONSIVE ===== */
+
+@media (max-width: 850px) {
+  .map-page {
+    width: 95%;
+    padding: 20px 14px;
+  }
+
+  .map-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .map-layout .leaflet-container {
+    height: 380px;
+  }
+
+  .map-filters {
+    gap: 10px;
+  }
+
+  .map-filters .filter-group {
+    flex: 1 1 180px;
+    min-width: 0;
+  }
+}
+
+
+/* Put the interactive journal above the field notes */
+
+.map-sidebar .season-card {
+  order: 1;
+}
+
+.map-sidebar .field-notes {
+  order: 2;
+}
+
+
+/* ===== SOFT PINK FIELD JOURNAL ===== */
+
+.map-sidebar .season-card {
+  background: #fff0f5;
+  border: 3px solid #f3cbdc;
+  border-radius: 22px;
+  box-shadow: 5px 5px 0 #f8dce8;
+}
+
+/* Small heading */
+.season-card .season-eyebrow {
+  color: #b77f99;
+}
+
+/* Main title */
+.season-card h2 {
+  color: #965c7b;
+}
+
+/* Paragraphs */
+.season-card p {
+  color: #946b80;
+}
+
+/* Toggle buttons */
+.season-card .journal-tabs button {
+  background: #fffafc;
+  color: #965c7b;
+  border: 2px solid transparent;
+}
+
+.season-card .journal-tabs button.selected {
+  background: #f7cddd;
+  border-color: #e7a9c2;
+  color: #7c4764;
+}
+
+/* Disclaimer */
+.season-card .journal-disclaimer {
+  color: #ae879b;
+}
+
+/* Research link */
+.season-card a {
+  color: #a45c80;
+}
+
+.season-card a:hover {
+  color: #7c4764;
+}
+
+
+
+
+
