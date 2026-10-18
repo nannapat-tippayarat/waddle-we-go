@@ -210,9 +210,10 @@ button:hover {
 
 @media (max-width: 600px) {
   .map-page {
-    width: 96%;
-    padding: 20px 12px;
-    margin: 20px auto;
+  width: calc(100% - 60px);
+  max-width: 1440px;
+  margin: 24px auto;
+  box-sizing: border-box;
   }
 
   .map-frame {
@@ -606,7 +607,7 @@ button.back-button:hover {
 
 /* Wider map explorer page */
 .map-page {
-  width: 96%;
+  width: 94%;
   max-width: 1600px;
   margin: 24px auto;
   padding: 30px;
@@ -798,36 +799,45 @@ button.back-button:hover {
 
 /* ===== MAP AND SIDEBAR ===== */
 
+
 .map-layout {
   display: grid;
   grid-template-columns: minmax(0, 1.9fr) minmax(260px, 1fr);
   gap: 18px;
-  align-items: start;
+  align-items: stretch;
 }
 
+/* Blue map card */
 .map-layout .map-frame {
   min-width: 0;
+  min-height: 0;
   padding: 10px;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
 }
 
+/* Map heading */
 .map-frame-top {
   padding: 4px 8px 10px;
 }
 
+/* Leaflet map fills the available space */
 .map-layout .leaflet-container {
-  height: 430px;
-  min-height: 0;
+  flex: 1 1 auto;
+  height: 0;
+  min-height: 430px;
   width: 100%;
 }
 
+/* Tracking point count */
 .map-count {
   color: #78a9b8;
   font-size: 12px;
   margin: 10px 0 2px;
 }
 
-/* Stack the two cards vertically */
-
+/* Pink and purple information cards */
 .map-sidebar {
   display: flex;
   flex-direction: column;
@@ -1111,6 +1121,114 @@ button.back-button:hover {
     grid-template-columns: 1fr;
   }
 }
+
+/* Make map page as wide as the navigation bar */
+
+.map-page {
+  width: 94% !important;
+  max-width: 1500px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  box-sizing: border-box;
+}
+
+
+/* About Us — team profile buttons */
+
+.team-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 28px;
+}
+
+.team-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 22px;
+
+  background: #91d1e1;
+  color: #28576c;
+
+  border-radius: 999px;
+  border: 2px solid #91d1e1;
+
+  font-weight: 700;
+  font-size: 15px;
+  text-decoration: none;
+
+  box-shadow: 4px 5px 0 #6faec3;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.team-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 4px 8px 0 #6faec3;
+}
+
+.team-button:focus-visible {
+  outline: 3px solid #365b70;
+  outline-offset: 4px;
+}
+
+/* Give the second button a soft pink color */
+.team-button:nth-child(2) {
+  background: #f7d7e7;
+  border-color: #f7d7e7;
+  color: #945b7a;
+  box-shadow: 4px 5px 0 #dfacc8;
+}
+
+.team-button:nth-child(2):hover {
+  box-shadow: 4px 8px 0 #dfacc8;
+}
+
+@media (max-width: 600px) {
+  .team-buttons {
+    flex-direction: column;
+  }
+
+  .team-button {
+    width: 100%;
+    box-sizing: border-box;
+  }
+}
+
+
+/* Little penguin decoration beside the map title */
+
+.map-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 22px;
+}
+
+.map-title-row h1 {
+  margin: 0;
+}
+
+.map-title-penguin {
+  width: 95px;
+  height: auto;
+  object-fit: contain;
+  flex-shrink: 0;
+  transform: none;
+  filter: drop-shadow(3px 5px 0 rgba(111, 174, 195, 0.2));
+}
+
+/* Make the penguin smaller on phones */
+@media (max-width: 600px) {
+  .map-title-row {
+    gap: 10px;
+  }
+
+  .map-title-penguin {
+    width: 55px;
+  }
+}
+
 
 
 

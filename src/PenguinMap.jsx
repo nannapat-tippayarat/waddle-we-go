@@ -184,6 +184,12 @@ const selectedStats = hasPenguin
           8 little explorers, 1 very big ocean.
           Follow their first journeys at sea!
         </p>
+
+        <img
+          src="/baby_penguins.png"
+          alt="A little penguin cheering on the explorers"
+          className="map-title-penguin"
+        />
       </div>
 
       {/* STICKERS */}

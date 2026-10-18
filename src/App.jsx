@@ -153,12 +153,27 @@ function App() {
             their world matters.
           </p>
 
-          <button
-            className="hero-cta"
-            onClick={() => showPage('map')}
-          >
-            explore the research →
-          </button>
+          
+<div className="team-buttons">
+  <a
+    href="https://www.linkedin.com/in/linahsu32/"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="team-button"
+  >
+    📊 meet the data explorer ↗
+  </a>
+
+  <a
+    href="https://www.linkedin.com/in/nannapat-tippayarat-895a5a344/"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="team-button"
+  >
+    💻 meet the web creator ↗
+  </a>
+</div>
+
         </main>
       )}
 
