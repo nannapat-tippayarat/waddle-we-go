@@ -99,7 +99,7 @@ function App() {
                 <span className="hero-sparkle">✧ ✦ ✧</span>
 
                 <img
-                  src="/penguin.webp"
+                  src="/penguin.png"
                   alt="Emperor penguin illustration"
                   className="hero-penguin"
                 />

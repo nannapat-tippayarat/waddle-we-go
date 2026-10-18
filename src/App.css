@@ -1026,6 +1026,93 @@ button.back-button:hover {
 }
 
 
+/* Penguin explorer passport */
+
+.penguin-profile-stats {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin: 18px 0;
+}
+
+.penguin-stat {
+  background: #ffffff;
+  border: 2px solid #f4d5e3;
+  border-radius: 15px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  min-width: 0;
+}
+
+.penguin-stat span {
+  font-size: 0.78rem;
+  color: #71889a;
+}
+
+.penguin-stat strong {
+  font-size: 1.05rem;
+  color: #365b70;
+  overflow-wrap: anywhere;
+}
+
+.season-card h3 {
+  color: #b97799;
+  font-size: 1.2rem;
+  margin: 8px 0 14px;
+}
+
+@media (max-width: 480px) {
+  .penguin-profile-stats {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* Cute penguin passport */
+
+.penguin-profile-stats {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin: 18px 0;
+}
+
+.penguin-stat {
+  background: #ffffff;
+  border: 2px solid #f4d5e3;
+  border-radius: 15px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  min-width: 0;
+}
+
+.penguin-stat span {
+  color: #71889a;
+  font-size: 0.8rem;
+}
+
+.penguin-stat strong {
+  color: #365b70;
+  font-size: 1.05rem;
+  overflow-wrap: anywhere;
+}
+
+.penguin-nickname {
+  color: #b97799;
+  margin: 6px 0 14px;
+}
+
+@media (max-width: 480px) {
+  .penguin-profile-stats {
+    grid-template-columns: 1fr;
+  }
+}
+
+
 
 
 

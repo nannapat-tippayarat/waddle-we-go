@@ -1,6 +1,6 @@
 # 🐧 Waddle We Go?
 
-Turning penguin journeys into stories that help young people understand Southern Ocean biodiversity, the threats facing marine ecosystems, and why conservation must extend beyond where animals live.
+Turning penguin journeys into stories that help young people understand Southern Ocean biodiversity research and why conservation must extend beyond where animals live.
 
 ## 🌊 About the Project
 

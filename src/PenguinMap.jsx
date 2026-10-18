@@ -11,6 +11,8 @@ import { useEffect } from 'react'
 import L from 'leaflet'
 import 'leaflet/dist/leaflet.css'
 import penguinData from './data/penguin_data.json'
+import { penguinProfiles } from './penguinProfiles'
+import { getPenguinStats } from './penguinStats'
 
 // Get the actual penguins and months from your friend's data.
 const penguins = [
@@ -103,6 +105,14 @@ function PenguinMap() {
 
   const hasPenguin = selectedPenguin !== 'all'
   const hasMonth = selectedMonth !== 'all'
+
+  const selectedProfile = hasPenguin
+  ? penguinProfiles[Number(selectedPenguin)]
+  : null
+
+const selectedStats = hasPenguin
+  ? getPenguinStats(selectedPenguin)
+  : null
 
   const monthLabel = hasMonth
     ? months.find(month => month.value === selectedMonth)?.label
@@ -405,46 +415,59 @@ function PenguinMap() {
                       above to discover its story.
                     </p>
                   </>
-                ) : (
+                ) : selectedProfile && selectedStats ? (
                   <>
-                    <h2>
-                      🐧 Penguin {selectedPenguin}
-                    </h2>
+                    <h2>{selectedProfile.emoji} Penguin {String(selectedPenguin).padStart(2, '0')}</h2>
+                    <h3 className="penguin-nickname">{selectedProfile.nickname}</h3>
+                    <p>{selectedProfile.description}</p>
 
-                    {hasMonth ? (
-                      <p>
-                        Exploring Penguin {selectedPenguin}'s
-                        journey during {monthLabel}.
-                      </p>
-                    ) : (
-                      <p>
-                        Exploring Penguin {selectedPenguin}'s
-                        complete recorded journey.
-                      </p>
-                    )}
+                    <div className="penguin-profile-stats">
+                      <div className="penguin-stat">
+                        <span>🏷️ Research tag ID</span>
+                        <strong>{selectedProfile.tagId}</strong>
+                      </div>
+                      <div className="penguin-stat">
+                        <span>⚖️ Mass at tagging</span>
+                        <strong>{selectedProfile.massGrams != null ? `${(selectedProfile.massGrams / 1000).toFixed(1)} kg` : 'Not available'}</strong>
+                      </div>
+                      <div className="penguin-stat">
+                        <span>📍 All tracking points</span>
+                        <strong>{selectedStats.trackingPoints.toLocaleString()}</strong>
+                      </div>
+                      <div className="penguin-stat">
+                        <span>📅 Months recorded</span>
+                        <strong>{selectedStats.monthsTracked}</strong>
+                      </div>
+                      <div className="penguin-stat">
+                        <span>🌊 Straight-line distance total</span>
+                        <strong>{selectedStats.trackedDistanceKm.toLocaleString()} km</strong>
+                      </div>
+                      <div className="penguin-stat">
+                        <span>🧭 Northernmost point</span>
+                        <strong>{Math.abs(selectedStats.northernmostLatitude).toFixed(2)}°S</strong>
+                      </div>
+                    </div>
 
-                    {filteredData.length === 0 ? (
+                    <p>🗓️ <strong>First recorded:</strong> {selectedStats.firstSeen}</p>
+                    <p>🗓️ <strong>Last recorded:</strong> {selectedStats.lastSeen}</p>
+
+                    {hasMonth && (
                       <p>
-                        No tracking observations were
-                        recorded for this selection.
-                        Try another month!
-                      </p>
-                    ) : (
-                      <p>
-                        This selection contains{' '}
-                        <strong>
-                          {filteredData.length.toLocaleString()}
-                        </strong>
-                        {' '}recorded locations.
+                        📅 Viewing {monthLabel}: {filteredData.length.toLocaleString()} locations
+                        for this penguin. The passport stats above cover its entire record.
                       </p>
                     )}
 
                     <p className="journal-disclaimer">
-                      These locations show recorded
-                      positions, not the penguin's
-                      exact path between observations.
+                      Tag IDs are matched to penguins using the confirmed row order.
+                      Masses are shown assuming the source measurements are in grams.
+                      Distance is the unfiltered sum of straight-line gaps between
+                      observations, not verified swimming distance; tracking errors
+                      may inflate it.
                     </p>
                   </>
+                ) : (
+                  <p>Profile details are not available for this penguin.</p>
                 )}
               </>
             )}
