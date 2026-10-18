@@ -176,7 +176,7 @@ button:hover {
   background: #eaf7fc;
   padding: 14px;
   border: 3px solid #a8d9e8;
-  border-radius: 24px;
+  border-radius: 30px;
   box-shadow: 5px 5px 0 #c8eaf2;
   overflow: hidden;
 }
@@ -441,7 +441,7 @@ button.back-button:hover {
 .home-bottom {
   text-align: center;
   padding: 16px;
-  color: #fffdf8;
+  color: #6092a5;
   font-weight: bold;
 }
 

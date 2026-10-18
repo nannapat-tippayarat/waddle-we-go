@@ -3,14 +3,27 @@ import { useState } from 'react'
 import PenguinMap from './PenguinMap'
 import './App.css'
 
+
+
 const penguinFacts = [
-  "Scientists tracked eight juvenile emperor penguins during their first journeys at sea!",
-  "The penguins were around six months old when researchers began tracking them.",
-  "Emperor penguins depend on Antarctic sea ice for breeding and raising their chicks.",
-  "The tracking study followed penguins from 2019 into 2020.",
-  "A penguin's location doesn't tell us whether it was swimming or resting on sea ice!",
-  "Studying young penguins helps scientists understand where they travel and which ocean habitats they use."
+  "Young emperor penguins spent about 90% of their time outside existing and proposed marine protected areas! EXCUSE ME?! Who's looking after my cousins?!",
+
+  "One of my cousins reached 48.37°S — roughly 600 km farther north than previous records! Someone get that penguin a vacation!",
+
+  "Scientists tracked eight young emperor penguins from Atka Bay, Antarctica! Eight tiny explorers against one HUGE ocean. I'm not crying, YOU'RE crying!",
+
+  "Their journeys spanned a region of about 5.1 MILLION square kilometers! And I thought waddling to the other side of the iceberg was impressive.",
+
+  "All eight youngsters left the proposed Weddell Sea protected area within days! To be fair, penguins can't read maps.",
+
+  "By August, every tracked penguin was outside our species' previously mapped range! Scientists really underestimated our travel plans. 😤",
+
+  "Young emperor penguins are still developing their diving and hunting skills. Basically, we're learning how to adult... except underwater.",
+
+  "Protecting our colonies is great, but we travel WAY beyond them! We need safer oceans too. A penguin's gotta explore!"
 ]
+
+
 
 function App() {
   const [page, setPage] = useState('home')
@@ -126,17 +139,18 @@ function App() {
           <h1>about us 🐧</h1>
 
           <p>
-            Waddle We Go? is a student-built project
-            that makes penguin research more accessible,
-            engaging, and personal.
+            For young emperor penguins, leaving the colony
+            means venturing into an enormous, unfamiliar
+            ocean. For us, it means diving beneath the
+            surface of scientific data to uncover the
+            stories behind their journeys.
           </p>
 
           <p>
-            Using real satellite-tracking data from
-            juvenile emperor penguins, we turn scientific
-            research into interactive maps and stories
-            that help people connect with Antarctic
-            wildlife and understand why conservation matters.
+            Through Waddle We Go?, we invite you to explore
+            the Southern Ocean, discover the challenges these
+            young penguins face, and see why protecting
+            their world matters.
           </p>
 
           <button

@@ -1,4 +1,3 @@
-
 import { useState, useMemo } from 'react'
 import {
   MapContainer,
@@ -179,7 +178,7 @@ const selectedStats = hasPenguin
           ✦ YOUR LITTLE OCEAN ADVENTURE ✦
         </p>
 
-        <h1>where did they waddle? 🐧</h1>
+        <h1>where in the world did they waddle?</h1>
 
         <p className="map-subtitle">
           8 little explorers, 1 very big ocean.
@@ -189,7 +188,7 @@ const selectedStats = hasPenguin
 
       {/* STICKERS */}
       <div className="map-stickers">
-        <span>🐧 tiny travelers</span>
+        <span>🎒 tiny travelers</span>
         <span>🌊 southern ocean</span>
         <span>💌 2019–2020</span>
       </div>
@@ -314,14 +313,6 @@ const selectedStats = hasPenguin
               penguins traveled, but not whether they
               were swimming or resting on ice.
             </p>
-
-            <a
-              href="https://doi.org/10.1098/rsos.211708"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Read the original research ↗
-            </a>
           </aside>
 
           {/* INTERACTIVE JOURNAL */}
